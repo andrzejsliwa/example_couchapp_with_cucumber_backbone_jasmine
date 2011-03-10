@@ -1,0 +1,10 @@
+// bundled_path: js/default.js
+// compressed_path: js/production.js
+// vendor_dir: js/vendor
+
+/ start adding your requirements below:
+
+sha1
+jquery
+jquery.couch
+js/app

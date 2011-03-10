@@ -1,0 +1,13 @@
+{
+  "env": {
+    "default": {
+      "db": "http://admin:123@localhost:5984/example"
+    },
+    "spec": {
+      "db": "http://admin:123@localhost:5984/example-spec"
+    },
+    "cucumber": {
+      "db": "http://admin:123@localhost:5984/example-cucumber"
+    }
+  }
+}

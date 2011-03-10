@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CouchWatch</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less">
+    <script type="text/javascript" src="js/vendor/LAB.min.js"></script>
+    <script type="text/javascript">
+      $LAB
+      .script("js/vendor/less.js")
+      .script("js/vendor/jquery.js").wait()
+      .script("js/vendor/jquery.couch.js").wait()
+      .script("js/vendor/underscore.js").wait()
+      .script("js/vendor/backbone.js").wait()
+      .script("js/vendor/backbone.couch.js").wait(function() {
+
+        window.CouchWatch = {};
+
+        Backbone.couch.databaseName = "example";
+        Backbone.couch.ddocName = "example";
+        Backbone.couch.enableChangesFeed = true;
+        Backbone.couch.ddocChange(function(ddocName){
+          if (console && console.log) {
+            console.log("current ddoc: '" + ddocName + "' changed");
+            console.log("restarting...");
+          }
+          window.location.reload();
+        });
+      })
+      .script("js/app.js")
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      Nothing yet ...
+    </div>
+  </body>
+</html>
